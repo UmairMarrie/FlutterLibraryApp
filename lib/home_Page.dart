@@ -1,4 +1,3 @@
-import 'package:first_app/whatsapp_ui.dart';
 import 'package:flutter/material.dart';
 
 
@@ -21,7 +20,7 @@ class HomePage extends StatelessWidget {
           Center(
             child: TextButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => WhatsappUi()));
+              
               },
               child: Text("WhatsappUi"),
             ),
