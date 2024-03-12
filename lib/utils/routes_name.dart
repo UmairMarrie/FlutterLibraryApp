@@ -1,6 +1,6 @@
 class RouteName{
 
-static const String homepage = "home_Page";
+static const String intoPage = "intro_screen";
 static const String splashscreen = "splash_screen";
 
 
