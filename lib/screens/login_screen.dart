@@ -1,3 +1,4 @@
+import 'package:first_app/utils/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -37,23 +38,28 @@ class Login extends StatelessWidget {
                     height: 80,
                   ),
         
-              LoginText(),
-               LoginText(),
+              LoginText(hint: "Enter Your RegNo",),
+               LoginText(hint: "Enter Your Password",),
                 SizedBox(
                     height: 20,
                   ),
-                Container(
-                height: 60,
-                width: 300,
-                decoration: BoxDecoration(
-                    color: Colors.teal,
-                    borderRadius: BorderRadius.circular(25.0)),
-                child: Center(
-                    child: Text(
-                  "Login",
-                  style: TextStyle(color: Colors.white),
-                )),
-              )
+                InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, RouteName.mainpage);
+                  },
+                  child: Container(
+                  height: 60,
+                  width: 300,
+                  decoration: BoxDecoration(
+                      color: Colors.teal,
+                      borderRadius: BorderRadius.circular(25.0)),
+                  child: Center(
+                      child: Text(
+                    "Login",
+                    style: TextStyle(color: Colors.white),
+                  )),
+                                ),
+                )
           ],
         ),
       ),
@@ -62,7 +68,8 @@ class Login extends StatelessWidget {
 }
 
 class LoginText extends StatelessWidget {
-  const LoginText({super.key});
+  final String hint;
+  const LoginText({super.key,required this.hint});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +80,9 @@ class LoginText extends StatelessWidget {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            hintText: "Name"),
+            hintText: hint,
+          
+            ),
       ),
     );
   }

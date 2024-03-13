@@ -1,5 +1,6 @@
 import 'package:first_app/screens/home_Page.dart';
 import 'package:first_app/screens/login_screen.dart';
+import 'package:first_app/screens/main_content.dart';
 import 'package:first_app/screens/signup_screen.dart';
 import 'package:first_app/splash_screen.dart';
 import 'package:first_app/utils/routes_name.dart';
@@ -19,6 +20,9 @@ class Routes {
 
         case RouteName.login:
         return MaterialPageRoute(builder: (context) => Login());
+
+        case RouteName.mainpage:
+        return MaterialPageRoute(builder: (context)=>MainPage());
 
       default:
         return MaterialPageRoute(
