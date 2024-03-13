@@ -1,4 +1,6 @@
 import 'package:first_app/screens/home_Page.dart';
+import 'package:first_app/screens/login_screen.dart';
+import 'package:first_app/screens/signup_screen.dart';
 import 'package:first_app/splash_screen.dart';
 import 'package:first_app/utils/routes_name.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,12 @@ class Routes {
 
       case RouteName.intoPage:
         return MaterialPageRoute(builder: (context) =>HomePage());
+
+        case RouteName.signup:
+        return MaterialPageRoute(builder: (context) =>SignUp());
+
+        case RouteName.login:
+        return MaterialPageRoute(builder: (context) => Login());
 
       default:
         return MaterialPageRoute(

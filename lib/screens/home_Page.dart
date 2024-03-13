@@ -1,3 +1,4 @@
+import 'package:first_app/utils/routes_name.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,9 +44,13 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  MyButton(text: "SignUp",),
+                  MyButton(text: "SignUp",onpress: (){
+                    Navigator.pushNamed(context,RouteName.signup);
+                  },),
                   SizedBox(width: 20,),
-                  MyButton(text: "Login",),
+                  MyButton(text: "Login",onpress: (){
+                    Navigator.pushNamed(context, RouteName.login);
+                  },),
                 ],
               ),
             ),
@@ -59,25 +64,29 @@ class _HomePageState extends State<HomePage> {
 class MyButton extends StatelessWidget {
 
   final String text;
-  const MyButton({super.key, required this.text});
+  final VoidCallback onpress;
+  const MyButton({super.key, required this.text,required this.onpress});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      width: 130,
-      decoration: BoxDecoration(
-         borderRadius: BorderRadius.circular(20.0),
-         color: Colors.teal
+    return InkWell(
+      onTap: onpress,
+      child: Container(
+        height: 40,
+        width: 130,
+        decoration: BoxDecoration(
+           borderRadius: BorderRadius.circular(20.0),
+           color: Colors.teal
+            ),
+        child: Center(
+            child: Text(
+          text,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.white
           ),
-      child: Center(
-          child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          color: Colors.white
-        ),
-      )),
+        )),
+      ),
     );
   }
 }
