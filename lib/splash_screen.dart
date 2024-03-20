@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.pushNamed(context, RouteName.intoPage);
      
      });
@@ -25,25 +25,18 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
      
       body: Container(
-        decoration: BoxDecoration(
-          
-          gradient: LinearGradient(
-             begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Colors.orangeAccent,
-            Colors.teal,
-          
-          ],
-          
-          )
-        ),
+        
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: Image(image: AssetImage('images/libicon.png')),
+              child: Image(
+                height: 200,
+                width: 200,
+                image: 
+              
+              NetworkImage('https://uoc.edu.pk/images/logo.png')),
             )
           ],
         ),
