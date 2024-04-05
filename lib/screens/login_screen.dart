@@ -38,8 +38,8 @@ class Login extends StatelessWidget {
                     height: 80,
                   ),
         
-              LoginText(hint: "Enter Your RegNo",),
-               LoginText(hint: "Enter Your Password",),
+              LoginText(hint: "Enter RegNo",),
+               LoginText(hint: "Enter Password",),
                 SizedBox(
                     height: 20,
                   ),
